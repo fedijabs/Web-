@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <title> SIRMA </title>
+        
+        <link href="../dist/output.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="java.js" defer></script>
+       
+    </head>
+    <body>
+        <header>
+       
+            <div class="css">
+                <a href="file:///c%3A/Users/pc/OneDrive/Radna%20povr%C5%A1ina/sirma/src/Forms.html" class="fa fa-user"></a>
+            </div>
+            
+          <!-----Vrh stranice----->
+            <nav class="navba">
+                <ul>
+                <li><a href="file:///c%3A/Users/pc/OneDrive/Radna%20povr%C5%A1ina/sirma/src/sirma.html">Početna</a></li> 
+                <li><a href="file:///C:/Users/pc/OneDrive/Radna%20povr%C5%A1ina/sirma/onama%20(2).html">O nama </a></li> 
+                <li><a href="file:///c%3A/Users/pc/OneDrive/Radna%20povr%C5%A1ina/sirma/src/Products.html">Artikli</a></li> 
+                <li><a href="">Kontakt</a></li> 
+                <li><a href="file:///c%3A/Users/pc/OneDrive/Radna%20povr%C5%A1ina/sirma/src/store.html" class="fa fa-shopping-cart"></a></li>
+                <li><a href="" class="fa fa-heart"></a></li>
+                </ul>
+            </nav>
+        </header>
+      
+
+        <div id="cart">
+            <h2>Izabrani artikli</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: <span id="total-price">0.00 KM</span></p>
+        </div>
+
+        <form id="payment-form">
+            <h3>Opcije plaćanja</h3>
+            <label>
+                <input type="radio" name="payment" value="delivery" checked>
+                Plati prilikom isporuke
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="payment" value="credit-card">
+                Karticno plaćanje
+            </label>
+            <br>
+            <button onclick="processPayment()"> Plati </button>
+        </form>
+        
+            <h3 class="text-xl text-center"> - Zelenilo - </h3>
+            
+                
+        <div class="gallery"  data-tags="list">
+             <img src="../imgs/list.png" alt="cvijet" width="800" height="600" class="object-left-top">
+             <div class="product" data-price="1.50KM">
+             <div class="desc">List</div>
+             <div class="desc">1.50KM</div>
+             <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+             <a href="" class="fa fa-heart" class="align-middle"></a></div>
+             <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+         </div>
+         <div class="gallery"  data-tags="list">
+            <img src="../imgs/zelen1.jpg" alt="cvijet" width="800" height="600" class="object-left">
+            <div class="product" data-price="3.50KM">
+            <div class="desc">Zelenilo</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+        </div>
+        <div class="gallery"  data-tags="list">
+            <img src="../imgs/zelen2.jpg" alt="cvijet" class="object-right">
+            <div class="product" data-price="3.50KM">
+            <div class="desc">Zelenilo</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+        </div>
+        <div class="gallery"  data-tags="list">
+            <img src="../imgs/zelen.jpg" alt="cvijet" width="800" height="600" class="object-left-top">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+        </div>
+        <div class="gallery"  data-tags="list">
+            <img src="../imgs/zelen3.jpg" alt="cvijet">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+        </div>
+        <div class="gallery"  data-tags="list">
+            <img src="../imgs/zelen4.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="gallery"  data-tags="list">
+            <img src="../imgs/zelen5.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="gallery"  data-tags="list">
+            <img src="../imgs/zelen10.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="gallery"  data-tags="list">
+            <img src="../imgs/zelen7.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="../imgs/zelen8.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">0.20KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="../imgs/zelen9.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+        </div>
+        <div class="gallery">
+            <img src="../imgs/zelen9.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="../imgs/zelen4.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="../imgs/zelen4.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.00">
+            <div class="desc">Buket</div>
+            <div class="desc">3KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="../imgs/zelen4.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="3.50">
+            <div class="desc">Buket</div>
+            <div class="desc">3.50KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>
+        <!--------KUTIJE-------->
+        <h3 class="text-center text-xl"  data-tags="Kutije"> Kutije </h3>
+        <div class="gallery">
+            <img src="../imgs/kutija.png" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="19.00">
+            <div class="desc"> Set kutija</div>
+            <div class="desc">19.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>   
+        <div class="gallery">
+            <img src="../imgs/kutija1.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="5.00KM">
+            <div class="desc">Kutija</div>
+            <div class="desc">5.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+        </div>  
+        <div class="gallery">
+            <img src="../imgs/kutija3.jpg" alt="cvijet" width="800" height="600">
+            <div class="product" data-price="19.00">
+            <div class="desc">Set kutija 3/1</div>
+            <div class="desc">19.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div> 
+        <div class="gallery">
+            <img src="../imgs/kutija4.jpg" alt="cvijet" >
+            <div class="product" data-price="8.00KM">
+            <div class="desc">Polu mjesec kutija</div>
+            <div class="desc">8.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div>  
+        <div class="gallery">
+            <img src="../imgs/kutija5.jpg" alt="cvijet">
+            <div class="product" data-price="4.00KM">
+            <div class="desc">Kutija</div>
+            <div class="desc">4.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div> 
+        <div class="gallery">
+            <img src="../imgs/kutija8.jpg" alt="cvijet">
+            <div class="product" data-price="16.00">
+            <div class="desc">Kutija</div>
+            <div class="desc">16.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div> 
+        <div class="gallery">
+            <img src="../imgs/kutija6.jpg" alt="cvijet" >
+            <div class="product" data-price="18.00KM">
+            <div class="desc">Set kutija 3/1</div>
+            <div class="desc">18.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div> 
+        <div class="gallery">
+            <img src="../imgs/kutija9.jpg" alt="cvijet" >
+            <div class="product" data-price="16.00KM">
+            <div class="desc">Kutija</div>
+            <div class="desc">16.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div> 
+        <div class="gallery">
+            <img src="../imgs/kutija10.jpg" alt="cvijet">
+            <div class="product" data-price="22.00KM">
+            <div class="desc">Set kutija 3/1</div>
+            <div class="desc">22.00KM</div>
+            <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div> 
+        <div class="gallery">
+            <img src="../imgs/kutija11.jpg" alt="cvijet">
+            <div class="product" data-price="16.00KM">
+            <div class="desc">Kutija</div>
+            <div class="desc">16.00KM</div>
+            <div class="price"><a href="" class="fa fa-shopping-cart"></a>
+            <a href="" class="fa fa-heart" class="align-middle"></a></div>
+            <button onclick="addToCart(this)">Add to cart</button>
+            </div>
+        </div> 
+        
+       <!---------Cvijece--------->
+       <h3> Cvijeće </h3>
+    <div class="gallery">
+        <img src="../imgs/cvijet1.jpg" alt="cvijet" >
+        <div class="product" data-price="0.30KM">
+        <div class="desc">Cvijet</div>
+        <div class="desc">0.30KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+     </div> 
+     <div class="gallery">
+        <img src="../imgs/040.jpg" alt="cvijet">
+        <div class="product" data-price="0.40KM">
+        <div class="desc">Cvijet</div>
+        <div class="desc">0.40KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+    </div> 
+    <div class="gallery">
+        <img src="../imgs/cvijeti.jpg" alt="cvijet" >
+        <div class="product" data-price="7.00KM">
+        <div class="desc">Cvijetici 144kom</div>
+        <div class="desc">7.00KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+    </div> 
+     <div class="gallery">
+        <img src="../imgs/cvijet10.jpg" alt="cvijet" >
+        <div class="product" data-price="12.00KM">
+        <div class="desc">Buket ruža</div>
+        <div class="desc">12.00KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+    </div> 
+     <div class="gallery">
+        <img src="../imgs/cvijet.jpg" alt="cvijet" >
+        <div class="product" data-price="14.00KM">
+        <div class="desc">Buket božura</div>
+        <div class="desc">14.00KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+    </div> 
+ 
+  
+    <!--------pak papir artikliii------>
+    <h3> Pak papir </h3>
+    <div class="gallery"  data-tags="papir">
+        <img src="../imgs/papir.jpg" alt="cvijet" >
+        <div class="product" data-price="10.00KM">
+        <div class="desc">Papir 20kom</div>
+        <div class="desc">10.00KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+    </div> 
+    <div class="gallery" data-tags="papir">
+        <img src="../imgs/papir1.jfif" alt="cvijet" >
+        <div class="product" data-price="8.00KM">
+        <div class="desc">Novine papir 20kom</div>
+        <div class="desc">8.00KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+    </div> 
+    <div class="gallery"  data-tags="papir">
+        <img src="../imgs/papir2.jfif" alt="cvijet">
+        <div class="product" data-price="9.00KM">
+        <div class="desc">Zebra papir 20kom</div>
+        <div class="desc">9.00KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+    </div> 
+    <div class="gallery"  data-tags="papir">
+        <img src="../imgs/papir3.jpg" alt="cvijet">
+        <div class="product" data-price="3.00KM">
+        <div class="desc">Eva pjena 10kom</div>
+        <div class="desc">3.00KM</div>
+        <div class="desc"><a href="" class="fa fa-shopping-cart"></a>
+        <a href="" class="fa fa-heart" class="align-middle"></a></div>
+        <button onclick="addToCart(this)">Add to cart</button>
+        </div>
+    </div> 
+    </body>
+</html>
